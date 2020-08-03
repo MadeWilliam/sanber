@@ -1,0 +1,33 @@
+create DATABASE quiz;
+USE quiz;
+
+create table customers (
+    id integer PRIMARY key AUTO_INCREMENT,
+    name varchar(255),
+    email varchar(255),
+    password varchar(255)
+);
+
+create table orders (
+    id integer PRIMARY key AUTO_INCREMENT,
+    name varchar(255),
+    customer_id integer,
+    foreign key(customer_id) REFERENCES customers(id) 
+);
+
+insert into customers (name, email, PASSWORD)
+VALUES ("John Doe", "john@doe.com", "john123");
+
+insert into customers (name, email, PASSWORD)
+VALUES ("John Doe", "john@doe.com", "jenita123");
+
+INSERT INTO orders (amount)
+VALUES (500);
+INSERT INTO orders (amount)
+VALUES (200);
+INSERT INTO orders (amount)
+VALUES (750);
+INSERT INTO orders (amount)
+VALUES (250);
+INSERT INTO orders (amount)
+VALUES (400);
