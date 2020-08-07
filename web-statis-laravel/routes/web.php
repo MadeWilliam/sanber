@@ -15,7 +15,9 @@
 //     return view('welcome');
 // });
 
-Route::get('/','HomeController@home');
+Route::get('/','HomeController@index');
+
+Route::get('/data-tables','HomeController@datatables');
 
 Route::get('/register','AuthController@register');
 

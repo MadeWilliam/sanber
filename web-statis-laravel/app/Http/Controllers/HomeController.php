@@ -6,8 +6,13 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function home()
+    public function index()
     {
-        return view('home');
+        return view('adminlte.items.index');
+    }
+
+    public function datatables()
+    {
+        return view('adminlte.items.datatables');
     }
 }
