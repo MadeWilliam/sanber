@@ -29,8 +29,14 @@
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ $question->title }}</td>
                                 <td>{{ $question->content }}</td>
-                                <td>
+                                <td style="display:flex">
                                     <a href="/pertanyaan/{{$question->id}}" class="btn btn-info btn-sm">Show</a>
+                                    <a href="/pertanyaan/{{$question->id}}/edit" class="btn btn-default btn-sm">Edit</a>
+                                    <form action="/pertanyaan/{{$question->id}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="submit" value="delete" class="btn btn-danger btn-sm">
+                                    </form>
                                 </td>
                             </tr>
                         @empty
