@@ -20,6 +20,8 @@
 // Route::get('/pertanyaan','PertanyaanController@index');
 Route::get('/pertanyaan/create','PertanyaanController@create');
 
-Route::post('/pertanyaan','PertanyaanController@store');
+Route::post('/pertanyaan/create','PertanyaanController@store');
 
 Route::get('/pertanyaan','PertanyaanController@index');
+
+Route::get('/pertanyaan/{id}','PertanyaanController@show');

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="ml-2 mt-2">
-        <form action="/ " method="POST">
+        <form action="/pertanyaan/create" method="post">
             @csrf
             <div class="card card-primary">
                 <div class="card-header">

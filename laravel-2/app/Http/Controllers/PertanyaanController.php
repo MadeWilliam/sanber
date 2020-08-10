@@ -26,7 +26,8 @@ class PertanyaanController extends Controller
         );
 
         
-        return redirect('pertanyaan/create');
+        return redirect('pertanyaan')
+            ->with('success', 'Pertanyaan berhasil disimpan');
     }
 
     public function index()
@@ -36,4 +37,10 @@ class PertanyaanController extends Controller
         return view('pertanyaan.index', compact('questions'));
     }
     
+    public function show($id)
+    {
+        $question = DB::table('questions')->where('id',$id)->first();
+        // dd($question);
+        return view('pertanyaan.show', compact('question'));
+    }
 }

@@ -8,6 +8,12 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                <a class="btn btn-primary mb-2" href="pertanyaan/create">Create New Post</a>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -20,15 +26,17 @@
                     <tbody>
                         @forelse ($questions as $key => $question)
                             <tr>
-                                <td>{{ $key+1 }}</td>
+                                <td>{{ $key + 1 }}</td>
                                 <td>{{ $question->title }}</td>
                                 <td>{{ $question->content }}</td>
-                                <td>actions</td>
+                                <td>
+                                    <a href="/pertanyaan/{{$question->id}}" class="btn btn-info btn-sm">Show</a>
+                                </td>
                             </tr>
                         @empty
-                        <tr>
-                            <td colspan="4" align="center">No question</td>
-                        </tr>
+                            <tr>
+                                <td colspan="4" align="center">No question</td>
+                            </tr>
                         @endforelse
                     </tbody>
                 </table>
