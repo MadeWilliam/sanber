@@ -18,7 +18,7 @@ class CreateQuestionsTable extends Migration
             $table->string('title');
             $table->longText('content');
             
-            $table->unsignedBigInteger('profile_id');
+            $table->unsignedBigInteger('profile_id')->nullable();
             $table->foreign('profile_id')->references('id')->on('profiles');
             $table->timestamps();
         });

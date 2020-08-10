@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     function home() {
-        return view('adminLTE.master');
+        return view('index');
     }
 }

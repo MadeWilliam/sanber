@@ -15,8 +15,8 @@ class CreateAnswerCommentsTable extends Migration
     {
         Schema::create('answer_comments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('answer_id');
-            $table->unsignedBigInteger('profile_id');
+            $table->unsignedBigInteger('answer_id')->nullable();
+            $table->unsignedBigInteger('profile_id')->nullable();
 
             $table->foreign('answer_id')->references('id')->on('answers');
             $table->foreign('profile_id')->references('id')->on('profiles');

@@ -15,4 +15,11 @@
 //     return view('welcome');
 // });
 
-Route::get('/','HomeController@home');
+// Route::get('/','HomeController@home');
+
+// Route::get('/pertanyaan','PertanyaanController@index');
+Route::get('/pertanyaan/create','PertanyaanController@create');
+
+Route::post('/pertanyaan','PertanyaanController@store');
+
+Route::get('/pertanyaan','PertanyaanController@index');
